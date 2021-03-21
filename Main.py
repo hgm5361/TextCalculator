@@ -32,6 +32,8 @@ def cube_rooting(x):
     return rooting(x,3)
 
 def help(x):
+    if x==0 or x==42.:
+        return("Help"+int(x)*"!")
     return int(x)*"Help"
 
 def equality_test(x,y):
@@ -39,7 +41,7 @@ def equality_test(x,y):
         print(x, "is greater than", y)
     elif x < y:
         print(x, "is less than", y)
-    elif x == y:
+    else:
         print(x, "is equal to", y)
 
 def sum_range(x,y): #finds the sum of integers in the range from x to y
@@ -90,9 +92,9 @@ def do_operation(x,y): #Checks which operation to do and does it
         print("Cube rooting number...")
         output = cube_rooting(x)
 
-    elif operation_type == "Help":  # secret command for spice
+    elif operation_type == "Help":  #secret command for spice
         print(help(x))
-        return(0)
+        return (int(input("Enter a starting number: ")))
 
     elif operation_type == "Clear": #Allows the user to enter a new starting number
         return(input("Enter a starting number: "))
@@ -127,10 +129,9 @@ if (operation_type != "Square Rooting") and (operation_type != "Cube Rooting") a
 
 #https://realpython.com/lessons/introduction-and-python-if-statement/ taught me if statements
 
-answer = 0
 while True: #Allows the user to do operations on the previous result
-    answer = do_operation(num1,num2)
+    num1 = do_operation(num1,num2)
     operation_type = input("\nType of operation: ")
-    num1 = answer
+
     if (operation_type != "Square Rooting") and (operation_type != "Cube Rooting") and not(operation_type == "Help"):
         num2 = float(input("Enter number: "))
