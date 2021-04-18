@@ -1,6 +1,12 @@
 # Integration Project
-# Hailey Merrifield
-# Making a textbased calculator program
+
+"""A text-based calculator program.
+
+This program does several mathematical operations and prints the results."""
+
+__version__ = '1'
+__author__ = 'Hailey Merrifield'
+
 
 def addition(x, y):
     return x + y
@@ -42,9 +48,9 @@ def cube_rooting(x):
     return rooting(x, 3)
 
 
-def help(x):
+def my_help(x):
     if x == 0 or x == 42.:
-        return ("Help" + int(x) * "!")
+        return "Help" + int(x) * "!"
     return int(x) * "Help"
 
 
@@ -62,7 +68,7 @@ def sum_range(x, y):
     output = 0
     for i in range(int(x), int(y + 1)):
         output += i
-    return (output)
+    return output
 
 
 def do_operation(x, y, operation_type):
@@ -110,37 +116,41 @@ def do_operation(x, y, operation_type):
 
     elif operation_type == "Help":
         """Secret command for spice."""
-        print(help(x))
-        return (int(input("Enter a starting number: ")))
+        print(my_help(x))
+        return int(input("Enter a starting number: "))
 
     elif operation_type == "Clear":
         """Allows the user to enter a new starting number."""
-        return (input("Enter a starting number: "))
+        return input("Enter a starting number: ")
 
     elif operation_type == "Equality Test":
         print("Testing equality...")
         equality_test(x, y)
-        return (input("Enter a starting number: "))
+        return input("Enter a starting number: ")
 
     elif operation_type == "Sum Range":
         print("Summing range from", x, "to", y)
         output = sum_range(x, y)
 
     print(output)
-    return (output)
+    return output
 
-  def main():
+
+def main():
     name = input("Enter your name: ")
     print("\nWelcome", name, end='!\n', sep=', ')
 
-    # https://realpython.com/python-print/#preventing-line-breaks further helped with sep= and end= arguments
+    # https://realpython.com/python-print/#preventing-line-breaks further
+    # helped with sep= and end= arguments
 
     print("\nThese are the types of numerical operations: \n" + "Addition",
           "Subtraction", "Multiplication", "Division",
           "Exponentiation", "Floor Division", "Modulation", "Rooting",
-          "Square Rooting", "Cube Rooting", "Clear", "Equality Test", "Sum Range",
+          "Square Rooting", "Cube Rooting", "Clear", "Equality Test",
+          "Sum Range",
           sep=', ')
-    # Used the + to separate the list of operations from the label without using the , from the sep= argument
+    # Used the + to separate the list of operations from the label without
+    # using the , from the sep= argument
 
     operation_type = input("\nType of operation: ")
     num1 = float(input("Enter first number: "))
@@ -150,7 +160,8 @@ def do_operation(x, y, operation_type):
             operation_type != "Cube Rooting") and (operation_type != "Help"):
         num2 = float(input("Enter second number: "))
 
-    # https://realpython.com/lessons/introduction-and-python-if-statement/ taught me if statements
+    # https://realpython.com/lessons/introduction-and-python-if-statement/
+    # taught me if statements
 
     while True:
         """Allows the user to do operations on the previous result."""
@@ -161,4 +172,3 @@ def do_operation(x, y, operation_type):
                 operation_type != "Cube Rooting") and not (
                 operation_type == "Help"):
             num2 = float(input("Enter number: "))
-main()
