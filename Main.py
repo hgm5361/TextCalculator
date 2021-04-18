@@ -1,5 +1,3 @@
-# Integration Project
-
 """A text-based calculator program.
 
 This program does several mathematical operations and prints the results."""
@@ -9,52 +7,64 @@ __author__ = 'Hailey Merrifield'
 
 
 def addition(x, y):
+    """Adds x and y."""
     return x + y
 
 
 def subtraction(x, y):
+    """Subtracts x and y."""
     return x - y
 
 
 def multiplication(x, y):
+    """Multiplies x and y."""
     return x * y
 
 
 def division(x, y):
+    """Divides x by y."""
     return x / y
 
 
 def exponentiation(x, y):
+    """Exponentiates x by y."""
     return x ** y
 
 
 def floor_division(x, y):
+    """Floor divides x by y."""
     return x // y
 
 
 def modulation(x, y):
+    """Modulates x by y."""
     return x % y
 
 
 def rooting(x, y):
+    """Gives the y root of x."""
     return x ** (1. / y)
 
 
 def square_rooting(x):
+    """Gives the square root of x."""
     return rooting(x, 2)
 
 
 def cube_rooting(x):
+    """Gives the cube root of x."""
     return rooting(x, 3)
 
 
 def my_help(x):
+    """Gives help."""
     if x == 0 or x == 42.:
         return "Help" + int(x) * "!"
     return int(x) * "Help"
 
 
 def equality_test(x, y):
+    """Determines whether x is greater than, less than, or equal to y."""
     if x > y:
         print(x, "is greater than", y)
     elif x < y:
